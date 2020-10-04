@@ -1,29 +1,47 @@
-$(document).ready(function(){
-    $("#myBirthDate").mask("MM/DD/YYYY");
-});
+//Business logic
 
+var male = ["Kwasi","Kwadwo","Kwabena","Kwaku","Yaw","Kofi","Kwame"];
 
-function getAkanName(){
-    var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-    var maleAkanNames = ["Kwasi","Kwadwo","Kwabena","Kwaku","Yaw","Kofi","Kwame"]
-    var femaleAkanNames = ["Akosua","Adwoa","Abenaa","Akua","Yaa","Afua","Ama"]
-    var myBirthday = document.getElementById("myBirthDate").value;
-    var myGender = document.getElementsByName("gender");
-    var dateOfBirth = new Date(myBirthday);
-    var dayOfTheWeek = dateOfBirth.getDay();
-            if(myGender[i].checked){
-                if(myGender[i].value === "Male"){
-                    document.getElementById('message').innerHTML =  "Hello Aklansman! You were born on a <span>" + days[dayOfTheWeek] + "</span>, Your Akan Name is <span>" + maleAkanNames[dayOfTheWeek] + "</span>";
-                    
-                }
-                else {
-                    document.getElementById('message').innerHTML = "Hello Aklansman! You were born on a <span>" + days[dayOfTheWeek] + "</span>, Your Akan Name is <span>" + femaleAkanNames[dayOfTheWeek] + "</span>";
-                    
-                }
-               
-            }
-        }
+var female = ["Akosua","Adwoa","Abenaa","Akua","Yaa","Afua","Ama"];
 
-function cancel(){
-    document.getElementById('message').innerHTML = "";
+var dateWeek = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+//userInterface
+
+function getInfo(){
+    var day = parseInt(document.getElementById("day").value);
+    
+    var month = parseInt(document.getElementById("month").value);
+    
+    var year = parseInt(document.getElementById("year").value);
+    
+    var gender = radioInfo();
+    
+    var dayWeek = new Date(year + "/" + month + "/" + day);
+    var d = dayWeek.getDay();
+    var name="" ;
+    if (gender ==="male"){
+       name = male[d];
+    }
+    else{
+       name = female[d];
+    }
+    //concat the day born and the Akan name
+    alert("Aklansman! Your Birthday is on "+ dateWeek[d] + " and your Akan name is "+ name);
+document.getElementById('akan').innerHTML = "Your birthday is on " + daysOfTheWeek[d] +  " and your Akan name is: " + maleNames[d] ;
+}
+function radioInfo (){
+    var radio = document.getElementsByName('gender');
+    for (var i = 0;  i<radio.length; i++)
+    {
+    if (radio[i].checked==true)
+    {
+        // generate output with the checked radio
+
+        gender = radio[i].value;
+        // only one radio can be logically checked
+
+return gender;
+}
+}
 }
