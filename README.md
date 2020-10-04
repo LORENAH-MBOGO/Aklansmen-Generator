@@ -1,3 +1,7 @@
+**Author**
+
+*-Lorenah M.*
+
 The Aklansmen- A Ghanian Names Generator, is a web application that takes a user's birthday and calculates the day of the week they were born and then depending on their gender outputs their Akan Name..
 
 
@@ -37,7 +41,7 @@ To revise or contribute to this project :
 - Commit your changes 
 - Push to the branch (branch you created)
 - Create a Pull Request
-##### Link to Live Site : ]()
+##### Link to Live Site :https://lorenah-mbogo.github.io/Aklansmen-Generator/ ](https://github.com/LORENAH-MBOGO/Aklansmen-Generator)
 ### License
 *MIT*
 Copyright (c) 2020 **Skylar Lorenah Mbogo**
